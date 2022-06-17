@@ -1,0 +1,85 @@
+.item
+  width: 320px
+  border-radius: 12px
+  border: 4px solid $accent
+  background: #F2F2F2
+  position: relative
+  margin-bottom: 15px
+  overflow: hidden
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%, 0 10%)
+  word-wrap: break-word
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  cursor: pointer
+  &::before
+    content: ''
+    position: absolute
+    width: 4px
+    height: 90px
+    background-color: $accent
+    left: 12px
+    top: -19px
+    transform: rotate(44deg)
+  &__top
+    padding: 20px 10px 0px 50px
+    margin-bottom: 17px
+
+    &-text
+      color: $secondary
+      line-height: 19px
+      margin-bottom: 5px
+      max-width: 205px
+      &.text--hover
+        display: none
+
+    &-title,
+    &-subtitle
+      color: #000
+      max-width: 211px
+
+    &-subtitle
+      margin-bottom: 15px
+
+    &-title
+      +fz(48px, 56px)
+
+    &-bottom
+      color: $secondary
+      max-width: 205px
+      span
+        display: block
+        +fz(14px, 16px)
+
+  &__bottom-text
+    +fz(13px, 15px)
+    text-align: center
+    &.text--selected,
+    &.text--disabled
+      display: none
+
+    a
+      color: $accent
+
+  &__circle
+    position: absolute
+    width: 80px
+    height: 80px
+    border-radius: 50%
+    background-color: $accent
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    bottom: 16px
+    right: 16px
+    span
+      +fz(42px, 43px)
+      &:last-child
+        +fz(21px, 22px)
+
+@media(max-width: 413px)
+  .item
+    width: 310px
+    &::before
+      left: 11px
